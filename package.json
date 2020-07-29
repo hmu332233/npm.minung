@@ -1,0 +1,12 @@
+{
+  "name": "npm.minung",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "minung.han <hmu332233@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "import-jsx": "^4.0.0",
+    "ink": "^3.0.0",
+    "react": "^16.13.1"
+  }
+}
