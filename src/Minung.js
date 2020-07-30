@@ -1,45 +1,28 @@
-const React = require("react");
-const { useState, useEffect } = require("react");
-const { render, Box, Text, Newline } = require("ink");
+const React = require('react');
+const { useEffect } = require('react');
+const { render, Box, Text, Newline } = require('ink');
 
-const useTypingEffect = ({ text }) => {
-  const [end, setEnd] = useState(false);
-  const [displayText, setDisplayText] = useState("");
-  const [textCount, setTextCount] = useState(0);
-
-  useEffect(() => {
-    if (textCount >= text.length) {
-      return setEnd(true);
-    }
-    
-    setDisplayText((str) => str + text[textCount]);
-  }, [textCount]);
-
-  useEffect(() => {
-    if (end) {
-      return;
-    }
-
-    const timer = setInterval(() => {
-      setTextCount((v) => v + 1);
-    }, 100);
-    return () => clearInterval(timer);
-  }, [end]);
-
-  return { displayText };
-};
+const useTypingEffect = require('./useTypingEffect');
 
 const Minung = () => {
-  const { displayText } = useTypingEffect({
-    text: 'Hi! I\'m Minung!',
+  const { displayText: firstText, play: firstTextPlay } = useTypingEffect({
+    text: "Hi! I'm Minung!",
+    playWhenMount: true,
   });
- 
+  const { displayText: secondText, setPlay: setSecondTextPlay } = useTypingEffect({
+    text: "I'm working as a software engineer at Goorm.",
+  });
+
+  useEffect(() => {
+    setSecondTextPlay(!firstTextPlay);
+  }, [firstTextPlay]);
+
   return (
     <Box flexDirection="column" padding={2}>
       <Text>
-        {displayText}
+        {firstText}
         <Newline />
-        I'm working as a software engineer at Goorm.
+        {secondText}
       </Text>
     </Box>
   );
