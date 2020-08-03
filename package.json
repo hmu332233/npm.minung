@@ -1,7 +1,11 @@
 {
-  "name": "npm.minung",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "minung",
+  "description": "Introducing Minung!",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "bin": {
+    "minung": "bin/run"
+  },
   "author": "minung.han <hmu332233@gmail.com>",
   "license": "MIT",
   "dependencies": {
