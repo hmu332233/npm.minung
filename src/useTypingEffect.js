@@ -2,14 +2,17 @@ const { useState, useEffect } = require('react');
 const useDidUpdateEffect = require('./useDidUpdateEffect');
 
 
-function useTypingEffect ({ text, playWhenMount }) {
-  const [play, setPlay] = useState(playWhenMount);
+function useTypingEffect ({ text }) {
+  const [end, setEnd] = useState(false);
+  const [play, setPlay] = useState(false);
   const [displayText, setDisplayText] = useState('');
   const [textCount, setTextCount] = useState(-1);
 
   useDidUpdateEffect(() => {
     if (textCount >= text.length) {
-      return setPlay(false);
+      setPlay(false);
+      setEnd(true);
+      return;
     }
     setDisplayText((str) => str + text[textCount]);
   }, [textCount]);
@@ -24,7 +27,7 @@ function useTypingEffect ({ text, playWhenMount }) {
     return () => clearInterval(timer);
   }, [play]);
 
-  return { displayText, play, setPlay };
+  return { displayText, play, setPlay, end };
 };
 
 module.exports = useTypingEffect;

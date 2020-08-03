@@ -5,17 +5,31 @@ const { render, Box, Text, Newline } = require('ink');
 const useTypingEffect = require('./useTypingEffect');
 
 const Minung = () => {
-  const { displayText: firstText, play: firstTextPlay } = useTypingEffect({
+  const { displayText: firstText, end: firstTextEnd, setPlay: setFirstTextPlay } = useTypingEffect({
     text: "Hi! I'm Minung!",
-    playWhenMount: true,
   });
-  const { displayText: secondText, setPlay: setSecondTextPlay } = useTypingEffect({
+  const { displayText: secondText, end: secondTextEnd, setPlay: setSecondTextPlay } = useTypingEffect({
     text: "I'm working as a software engineer at Goorm.",
+  });
+  const { displayText: thirdText, setPlay: setThirdTextPlay } = useTypingEffect({
+    text: "Github: https://github.com/hmu332233",
   });
 
   useEffect(() => {
-    setSecondTextPlay(!firstTextPlay);
-  }, [firstTextPlay]);
+    setFirstTextPlay(true);
+  }, [])
+
+  useEffect(() => {
+    if (firstTextEnd) {
+      setSecondTextPlay(true);
+    }
+  }, [firstTextEnd]);
+
+  useEffect(() => {
+    if (secondTextEnd) {
+      setThirdTextPlay(true);
+    }
+  }, [secondTextEnd]);
 
   return (
     <Box flexDirection="column" padding={2}>
@@ -23,6 +37,9 @@ const Minung = () => {
         {firstText}
         <Newline />
         {secondText}
+        <Newline />
+        <Newline />
+        {thirdText}
       </Text>
     </Box>
   );
