@@ -1,7 +1,7 @@
 {
   "name": "minung",
   "description": "Introducing Minung!",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "src/index.js",
   "bin": {
     "minung": "bin/run"
@@ -12,7 +12,6 @@
   "author": "minung.han <hmu332233@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "import-jsx": "^4.0.0",
     "ink": "^3.0.0",
     "react": "^16.13.1"
   },
