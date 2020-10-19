@@ -6,11 +6,24 @@
   "bin": {
     "minung": "bin/run"
   },
+  "scripts": {
+    "build": "babel src -d lib"
+  },
   "author": "minung.han <hmu332233@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "import-jsx": "^4.0.0",
     "ink": "^3.0.0",
     "react": "^16.13.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-react": "^7.12.1"
   }
 }

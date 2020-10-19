@@ -1,4 +1,5 @@
-'use strict';
-const importJsx = require('import-jsx');
-process.env.FORCE_COLOR = '1';
-importJsx('./Minung');
+const React = require('react');
+const Minung = require('./Minung');
+const { render } = require('ink');
+
+render(<Minung />);

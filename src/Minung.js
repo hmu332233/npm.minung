@@ -1,10 +1,10 @@
 const React = require('react');
 const { useEffect } = require('react');
-const { render, Box, Text, Newline } = require('ink');
+const { Box, Text, Newline } = require('ink');
 
 const useTypingEffect = require('./useTypingEffect');
 
-const Minung = () => {
+function Minung() {
   const { displayText: firstText, end: firstTextEnd, setPlay: setFirstTextPlay } = useTypingEffect({
     text: "Hi! I'm Minung!",
   });
@@ -45,4 +45,4 @@ const Minung = () => {
   );
 };
 
-render(<Minung />);
+module.exports = Minung;
