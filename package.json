@@ -1,7 +1,7 @@
 {
   "name": "minung",
   "description": "Introducing Minung!",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "main": "src/index.js",
   "bin": {
     "minung": "bin/run"
@@ -12,8 +12,8 @@
   "author": "minung.han <hmu332233@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "ink": "^3.0.0",
-    "react": "^16.13.1"
+    "ink": "^3.2.0",
+    "react": "^18.0.0"
   },
   "babel": {
     "presets": [
@@ -21,8 +21,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/preset-react": "^7.12.1"
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-react": "^7.16.7"
   }
 }
