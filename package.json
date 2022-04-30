@@ -7,7 +7,7 @@
     "minung": "bin/run"
   },
   "scripts": {
-    "build": "babel src -d lib"
+    "build": "tsc src"
   },
   "author": "minung.han <hmu332233@gmail.com>",
   "license": "MIT",
@@ -15,14 +15,8 @@
     "ink": "^3.2.0",
     "react": "^18.0.0"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.9",
-    "@babel/preset-react": "^7.16.7"
+    "@types/react": "^18.0.8",
+    "typescript": "^4.6.4"
   }
 }

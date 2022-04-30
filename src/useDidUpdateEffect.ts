@@ -1,6 +1,6 @@
-const { useEffect, useRef } = require('react');
+import { useEffect, useRef } from 'react';
 
-function useDidUpdateEffect(func, inputs) {
+function useDidUpdateEffect(func: () => void, deps: any[]) {
   const didMountRef = useRef(false);
   useEffect(() => {
     if (didMountRef.current) {
@@ -8,7 +8,7 @@ function useDidUpdateEffect(func, inputs) {
     } else {
       didMountRef.current = true
     }
-  }, inputs);
+  }, deps);
 }
 
-module.exports = useDidUpdateEffect;
+export default useDidUpdateEffect;

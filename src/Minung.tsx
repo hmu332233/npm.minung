@@ -1,8 +1,8 @@
-const React = require('react');
-const { useEffect } = require('react');
-const { Box, Text, Newline } = require('ink');
+import React from 'react';
+import { useEffect } from 'react';
+import { Box, Text, Newline } from 'ink';
 
-const useTypingEffect = require('./useTypingEffect');
+import useTypingEffect from './useTypingEffect';
 
 function Minung() {
   const { displayText: firstText, end: firstTextEnd, setPlay: setFirstTextPlay } = useTypingEffect({
@@ -45,4 +45,4 @@ function Minung() {
   );
 };
 
-module.exports = Minung;
+export default Minung;

@@ -1,8 +1,11 @@
-const { useState, useEffect } = require('react');
-const useDidUpdateEffect = require('./useDidUpdateEffect');
+import { useState, useEffect } from 'react';
+import useDidUpdateEffect from './useDidUpdateEffect';
 
+type Props = {
+  text: string;
+}
 
-function useTypingEffect ({ text }) {
+function useTypingEffect ({ text }: Props) {
   const [end, setEnd] = useState(false);
   const [play, setPlay] = useState(false);
   const [displayText, setDisplayText] = useState('');
@@ -30,4 +33,4 @@ function useTypingEffect ({ text }) {
   return { displayText, play, setPlay, end };
 };
 
-module.exports = useTypingEffect;
+export default useTypingEffect;
