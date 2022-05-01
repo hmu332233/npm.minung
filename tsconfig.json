@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "es5",
     "module": "commonjs",
     "outDir": "lib",
@@ -8,7 +7,9 @@
     "strict": true,
     "jsx": "react",
     "esModuleInterop": true,
-    "typeRoots": ["node_modules/@types", "types"],
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
