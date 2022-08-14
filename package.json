@@ -1,14 +1,15 @@
 {
   "name": "minung",
   "description": "Introducing Minung!",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "src/index.js",
   "bin": {
     "minung": "bin/run"
   },
   "scripts": {
     "prebuild": "rm -rf lib",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "start": "./bin/run"
   },
   "author": "minung.han <hmu332233@gmail.com>",
   "license": "MIT",
