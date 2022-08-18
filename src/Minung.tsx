@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Box, Text } from 'ink';
 
-import useTypingEffect from './useTypingEffect';
+// import useTypingEffect from './useTypingEffect';
 
 const TEXTS = [
   `Hi! I'm Minung!`,
@@ -12,18 +12,18 @@ const TEXTS = [
 ].join('\n');
 
 function Minung() {
-  const { displayText, setPlay } = useTypingEffect({
-    text: TEXTS,
-  });
+  // const { displayText, setPlay } = useTypingEffect({
+  //   text: TEXTS,
+  // });
 
-  useEffect(() => {
-    setPlay(true);
-  }, []);
+  // useEffect(() => {
+  //   setPlay(true);
+  // }, []);
 
   return (
     <Box flexDirection="column" padding={2}>
       <Text>
-        {displayText}
+        {TEXTS}
       </Text>
     </Box>
   );

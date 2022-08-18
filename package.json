@@ -1,7 +1,7 @@
 {
   "name": "minung",
   "description": "Introducing Minung!",
-  "version": "0.1.0",
+  "version": "0.2.1-beta",
   "main": "src/index.js",
   "bin": {
     "minung": "bin/run"
